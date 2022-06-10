@@ -1,12 +1,12 @@
 .data
 
 .code
-subhan proc
+armstrong proc
 	mov eax, ecx
 	mov r12d,edx
 	xor ecx, ecx
 	
-	hml:
+	divide:
 		mov ebx, 10
 		xor edx,edx
 		div ebx
@@ -16,16 +16,16 @@ subhan proc
 		mov r10d,1
 		mov r11d,edx ;temp
 
-		xml:
+		power:
 			imul r8d,r11d
 			inc r10d
 			cmp r10d, r9d
-			jl xml
+			jl power
 			add ecx, r8d
 		cmp eax,0
-		jnz hml
+		jnz divide
 
 	mov eax,ecx
 	ret
-subhan endp
+armstrong endp
 end
